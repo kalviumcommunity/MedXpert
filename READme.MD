@@ -1,5 +1,5 @@
 # CAPSTONE PROJECT
-## HOSPITAL MANAGEMENT SYSTEM!!
+## HOSPITAL MANAGEMENT SYSTEM!
 ___
 Project Overview:
       The goal is to create a website where patients can select a disease, choose an appropriate doctor, pick an available time slot, and book an appointment.
