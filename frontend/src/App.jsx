@@ -1,15 +1,32 @@
-import React from 'react';
-import './App.css';
-import Navbar from './components/Navbar';
-import CreateAccount from './components/CreateAccount';
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import Doctors from './pages/Doctors'
+import Login from './pages/Login'
+import About from './pages/About'
+import MyProfile from './pages/MyProfile'
+import MyAppointment from './pages/MyAppointment'
+import Navbar from './components/Navbar'
+import Appointment from './pages/Appointment'
+import Footer from './components/Footer'
 
-function App() {
+export const App = () => {
   return (
-    <div>
+    <div className='mx-4 sm:mx-[10%]>'>
       <Navbar />
-      <CreateAccount />
-    </div>
-  );
-}
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='/doctors' element={<Doctors />}/>
+        <Route path='/doctors/:speciality' element={<Doctors />}/>
+        <Route path='/login' element={<Login />}/>
+        <Route path='/about' element={<About />}/>
+        <Route path='/my-profile' element={<MyProfile />}/>
+        <Route path='/my-appointments' element={<MyAppointment />}/>
+        <Route path='/appointment/:docId' element={<Appointment />}/>
 
-export default App;
+      </Routes>
+      <Footer />
+    </div>
+  )
+}
+export default App
