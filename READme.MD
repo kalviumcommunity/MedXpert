@@ -91,3 +91,6 @@ DAILY PLAN:
 28th Mar : API integration (OTP provider)
 29th Mar : API integration (OTP provider)
 30th Mar : Get certificate from Microsoft Applied Skills.
+
+
+netlify link : https://musical-lollipop-d882a1.netlify.app/

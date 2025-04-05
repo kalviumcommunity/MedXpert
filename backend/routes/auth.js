@@ -8,7 +8,7 @@ dotenv.config();
 
 const router = express.Router();
 
-// ✅ User Registration (Signup)
+// ✅ User Registration 
 router.post("/register", async (req, res) => {
     const { email, username,password } = req.body;
     
@@ -27,7 +27,7 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
     const {username, password} = req.body;
     const user = await User.findOne({ username });
-
+ 
     if(!user || !(await bcrypt.compare(password, user.password))) {
         return res.status(401).json({ error: "Invalid credentials" });
     }
@@ -37,9 +37,9 @@ router.post("/login", async (req, res) => {
 });
 
 // ✅ Get All Users (Public)
-router.get("/users", async (req, res) => {
-    const users = await User.find();
-    res.json(users);
-});
+// router.get("/users", async (req, res) => {
+//     const users = await User.find();
+//     res.json(users);
+// });
 
 export default router;
