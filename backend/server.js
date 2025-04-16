@@ -15,11 +15,18 @@ app.use(express.json());
 app.use("/api/v1", authRoutes);
 
 // ✅ Connect to MongoDB
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ MongoDB connected..."))
-  .catch((err) => console.error("❌ MongoDB connection error:", err));
+mongoose.set('strictQuery', true); // Optional, suppress Mongoose 7 deprecation warning
 
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(() => console.log("✅ MongoDB connected..."))
+  .catch((err) => {
+    console.error("❌ MongoDB connection error:", err);
+    process.exit(1); // Exit the app if DB fails to connect
+  });
 // ✅ Start server
 app.listen(port, () => {
   console.log(`🚀 Server is running on http://localhost:${port}`);
