@@ -94,3 +94,5 @@ DAILY PLAN:
 
 
 netlify link : https://musical-lollipop-d882a1.netlify.app/
+
+render link : https://medxpert-jv30.onrender.com
